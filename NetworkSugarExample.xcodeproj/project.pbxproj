@@ -17,6 +17,9 @@
 		F1BED6A621B4F75800A0D3D4 /* NetworkSugar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F1BED69E21B4F75800A0D3D4 /* NetworkSugar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F1BED6AE21B4F80F00A0D3D4 /* NetworkParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED6AC21B4F80F00A0D3D4 /* NetworkParser.swift */; };
 		F1BED6AF21B4F80F00A0D3D4 /* NetworkAsserter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED6AD21B4F80F00A0D3D4 /* NetworkAsserter.swift */; };
+		F1C2171E228D64FD005B445B /* NetworkSugar_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = F1C2171C228D64FD005B445B /* NetworkSugar_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1C21723228D6612005B445B /* NetworkParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED6AC21B4F80F00A0D3D4 /* NetworkParser.swift */; };
+		F1C21724228D6612005B445B /* NetworkAsserter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED6AD21B4F80F00A0D3D4 /* NetworkAsserter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		F1BED6A121B4F75800A0D3D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1BED6AC21B4F80F00A0D3D4 /* NetworkParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkParser.swift; sourceTree = "<group>"; };
 		F1BED6AD21B4F80F00A0D3D4 /* NetworkAsserter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAsserter.swift; sourceTree = "<group>"; };
+		F1C2171A228D64FD005B445B /* NetworkSugar_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkSugar_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1C2171C228D64FD005B445B /* NetworkSugar_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkSugar_macOS.h; sourceTree = "<group>"; };
+		F1C2171D228D64FD005B445B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1C21717228D64FD005B445B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +95,7 @@
 			children = (
 				F1BED68621B4F73100A0D3D4 /* NetworkSugarExample */,
 				F1BED69F21B4F75800A0D3D4 /* NetworkSugar */,
+				F1C2171B228D64FD005B445B /* NetworkSugar_macOS */,
 				F1BED68521B4F73100A0D3D4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,6 +105,7 @@
 			children = (
 				F1BED68421B4F73100A0D3D4 /* NetworkSugarExample.app */,
 				F1BED69E21B4F75800A0D3D4 /* NetworkSugar.framework */,
+				F1C2171A228D64FD005B445B /* NetworkSugar_macOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,6 +142,15 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		F1C2171B228D64FD005B445B /* NetworkSugar_macOS */ = {
+			isa = PBXGroup;
+			children = (
+				F1C2171C228D64FD005B445B /* NetworkSugar_macOS.h */,
+				F1C2171D228D64FD005B445B /* Info.plist */,
+			);
+			path = NetworkSugar_macOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -135,6 +159,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1BED6A221B4F75800A0D3D4 /* NetworkSugar.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1C21715228D64FD005B445B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1C2171E228D64FD005B445B /* NetworkSugar_macOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +181,7 @@
 				F1BED68121B4F73100A0D3D4 /* Frameworks */,
 				F1BED68221B4F73100A0D3D4 /* Resources */,
 				F1BED6AA21B4F75800A0D3D4 /* Embed Frameworks */,
+				F1C21713228D60DE005B445B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -168,6 +201,7 @@
 				F1BED69A21B4F75800A0D3D4 /* Sources */,
 				F1BED69B21B4F75800A0D3D4 /* Frameworks */,
 				F1BED69C21B4F75800A0D3D4 /* Resources */,
+				F1C21714228D60F0005B445B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -176,6 +210,25 @@
 			name = NetworkSugar;
 			productName = NetworkSugar;
 			productReference = F1BED69E21B4F75800A0D3D4 /* NetworkSugar.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F1C21719228D64FD005B445B /* NetworkSugar_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1C2171F228D64FD005B445B /* Build configuration list for PBXNativeTarget "NetworkSugar_macOS" */;
+			buildPhases = (
+				F1C21715228D64FD005B445B /* Headers */,
+				F1C21716228D64FD005B445B /* Sources */,
+				F1C21717228D64FD005B445B /* Frameworks */,
+				F1C21718228D64FD005B445B /* Resources */,
+				F1C21722228D6512005B445B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetworkSugar_macOS;
+			productName = NetworkSugar_macOS;
+			productReference = F1C2171A228D64FD005B445B /* NetworkSugar_macOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -193,6 +246,10 @@
 					};
 					F1BED69D21B4F75800A0D3D4 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
+					};
+					F1C21719228D64FD005B445B = {
+						CreatedOnToolsVersion = 10.2;
 					};
 				};
 			};
@@ -211,6 +268,7 @@
 			targets = (
 				F1BED68321B4F73100A0D3D4 /* NetworkSugarExample */,
 				F1BED69D21B4F75800A0D3D4 /* NetworkSugar */,
+				F1C21719228D64FD005B445B /* NetworkSugar_macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -233,7 +291,68 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1C21718228D64FD005B445B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F1C21713228D60DE005B445B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		F1C21714228D60F0005B445B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		F1C21722228D6512005B445B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F1BED68021B4F73100A0D3D4 /* Sources */ = {
@@ -251,6 +370,15 @@
 			files = (
 				F1BED6AE21B4F80F00A0D3D4 /* NetworkParser.swift in Sources */,
 				F1BED6AF21B4F80F00A0D3D4 /* NetworkAsserter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1C21716228D64FD005B445B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1C21723228D6612005B445B /* NetworkParser.swift in Sources */,
+				F1C21724228D6612005B445B /* NetworkAsserter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +584,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.futurelab.NetworkSugar;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -483,8 +611,68 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.futurelab.NetworkSugar;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F1C21720228D64FD005B445B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = NetworkSugar_macOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.futurelab.NetworkSugar-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F1C21721228D64FD005B445B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = NetworkSugar_macOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.futurelab.NetworkSugar-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -516,6 +704,15 @@
 			buildConfigurations = (
 				F1BED6A721B4F75800A0D3D4 /* Debug */,
 				F1BED6A821B4F75800A0D3D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1C2171F228D64FD005B445B /* Build configuration list for PBXNativeTarget "NetworkSugar_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1C21720228D64FD005B445B /* Debug */,
+				F1C21721228D64FD005B445B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
