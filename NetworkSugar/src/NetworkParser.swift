@@ -9,9 +9,10 @@ public class NetworkParser {
     * Return string for WebPath
     * ## Examples:
     * NetworkParser.str(webPath: webPath) //(See defaultDownloadComplete)
+    * Fixme: ⚠️️ rename webPath to urlStr ?
     */
-   public static func str(webPath: String, onComplete:@escaping DownloadComplete = defaultDownloadComplete) {
-      guard let url = URL(string: webPath) else { onComplete(nil, .invalideWebPath); return }
+   public static func str(urlStr: String, onComplete:@escaping DownloadComplete = defaultDownloadComplete) {
+      guard let url = URL(string: urlStr) else { onComplete(nil, .invalideWebPath); return }
       str(url: url, downloadComplete: onComplete)
    }
    /**
@@ -30,8 +31,8 @@ public class NetworkParser {
    /**
     * ## Examples: NetworkParser.data(webPath: webPath)
     */
-   public static func data(webPath: String, onComplete:@escaping DataDownloadComplete = defaultDataComplete) {
-      guard let url = URL(string: webPath) else { onComplete(nil, .invalideWebPath); return }
+   public static func data(urlStr: String, onComplete:@escaping DataDownloadComplete = defaultDataComplete) {
+      guard let url = URL(string: urlStr) else { onComplete(nil, .invalideWebPath); return }
       data(url: url) { data, response, error in
          guard let data = data, error == nil else { onComplete(nil, .errorGettingDataFromURL(error, response)); return }
          //Swift.print(response?.suggestedFilename ?? url.lastPathComponent)
