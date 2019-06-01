@@ -12,7 +12,7 @@ extension NetworkParser {
     * NetworkParser.str(webPath: webPath) //(See defaultDownloadComplete)
     * urlStr:"https://www.google.com/dev/push?=someValue"
     */
-   public static func str(urlStr: String, httpMethod:HTTPMethodType = .get, onComplete:@escaping DownloadComplete = defaultDownloadComplete) {
+   public static func str(urlStr: String, httpMethod: HTTPMethodType = .get, onComplete:@escaping DownloadComplete = defaultDownloadComplete) {
       guard let url = URL(string: urlStr) else { onComplete(nil, .invalideWebPath); return }
       str(url: url, downloadComplete: onComplete)
    }
@@ -21,7 +21,7 @@ extension NetworkParser {
     * ## Examples:
     * NetworkParser.str(url: url)
     */
-   public static func str(url: URL, httpMethod:HTTPMethodType = .get, downloadComplete:@escaping DownloadComplete = defaultDownloadComplete) {
+   public static func str(url: URL, httpMethod: HTTPMethodType = .get, downloadComplete:@escaping DownloadComplete = defaultDownloadComplete) {
       data(url: url, httpMethod: httpMethod) { data, response, error in
          guard let data = data, error == nil else { downloadComplete(nil, .errorGettingDataFromURL(error, response)); return }
          //Swift.print(response?.suggestedFilename ?? url.lastPathComponent)
