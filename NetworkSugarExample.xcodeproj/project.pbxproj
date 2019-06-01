@@ -20,6 +20,14 @@
 		F1C2171E228D64FD005B445B /* NetworkSugar_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = F1C2171C228D64FD005B445B /* NetworkSugar_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F1C21723228D6612005B445B /* NetworkParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED6AC21B4F80F00A0D3D4 /* NetworkParser.swift */; };
 		F1C21724228D6612005B445B /* NetworkAsserter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED6AD21B4F80F00A0D3D4 /* NetworkAsserter.swift */; };
+		F1FA955922A251ED009088FB /* NetworkParser+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FA955822A251ED009088FB /* NetworkParser+Type.swift */; };
+		F1FA955B22A25204009088FB /* NetworkParser+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FA955A22A25204009088FB /* NetworkParser+Default.swift */; };
+		F1FA955D22A2521E009088FB /* NetworkParser+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FA955C22A2521E009088FB /* NetworkParser+String.swift */; };
+		F1FA955F22A25241009088FB /* NetworkParser+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FA955E22A25241009088FB /* NetworkParser+Error.swift */; };
+		F1FA956022A252AA009088FB /* NetworkParser+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FA955E22A25241009088FB /* NetworkParser+Error.swift */; };
+		F1FA956122A252AA009088FB /* NetworkParser+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FA955822A251ED009088FB /* NetworkParser+Type.swift */; };
+		F1FA956222A252AA009088FB /* NetworkParser+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FA955A22A25204009088FB /* NetworkParser+Default.swift */; };
+		F1FA956322A252AA009088FB /* NetworkParser+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FA955C22A2521E009088FB /* NetworkParser+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +70,10 @@
 		F1C2171A228D64FD005B445B /* NetworkSugar_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkSugar_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C2171C228D64FD005B445B /* NetworkSugar_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkSugar_macOS.h; sourceTree = "<group>"; };
 		F1C2171D228D64FD005B445B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1FA955822A251ED009088FB /* NetworkParser+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkParser+Type.swift"; sourceTree = "<group>"; };
+		F1FA955A22A25204009088FB /* NetworkParser+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkParser+Default.swift"; sourceTree = "<group>"; };
+		F1FA955C22A2521E009088FB /* NetworkParser+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkParser+String.swift"; sourceTree = "<group>"; };
+		F1FA955E22A25241009088FB /* NetworkParser+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkParser+Error.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +149,10 @@
 			isa = PBXGroup;
 			children = (
 				F1BED6AC21B4F80F00A0D3D4 /* NetworkParser.swift */,
+				F1FA955E22A25241009088FB /* NetworkParser+Error.swift */,
+				F1FA955822A251ED009088FB /* NetworkParser+Type.swift */,
+				F1FA955A22A25204009088FB /* NetworkParser+Default.swift */,
+				F1FA955C22A2521E009088FB /* NetworkParser+String.swift */,
 				F1BED6AD21B4F80F00A0D3D4 /* NetworkAsserter.swift */,
 			);
 			path = src;
@@ -368,6 +384,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1FA955F22A25241009088FB /* NetworkParser+Error.swift in Sources */,
+				F1FA955922A251ED009088FB /* NetworkParser+Type.swift in Sources */,
+				F1FA955D22A2521E009088FB /* NetworkParser+String.swift in Sources */,
+				F1FA955B22A25204009088FB /* NetworkParser+Default.swift in Sources */,
 				F1BED6AE21B4F80F00A0D3D4 /* NetworkParser.swift in Sources */,
 				F1BED6AF21B4F80F00A0D3D4 /* NetworkAsserter.swift in Sources */,
 			);
@@ -377,8 +397,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1FA956322A252AA009088FB /* NetworkParser+String.swift in Sources */,
+				F1FA956222A252AA009088FB /* NetworkParser+Default.swift in Sources */,
+				F1FA956022A252AA009088FB /* NetworkParser+Error.swift in Sources */,
 				F1C21723228D6612005B445B /* NetworkParser.swift in Sources */,
 				F1C21724228D6612005B445B /* NetworkAsserter.swift in Sources */,
+				F1FA956122A252AA009088FB /* NetworkParser+Type.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

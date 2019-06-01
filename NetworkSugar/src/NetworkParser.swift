@@ -3,31 +3,10 @@ import AppKit.NSView
 #else
 import UIKit.UIView
 #endif
-
+/**
+ * Data
+ */
 public class NetworkParser {
-   /**
-    * Return string for WebPath
-    * ## Examples:
-    * NetworkParser.str(webPath: webPath) //(See defaultDownloadComplete)
-    * Fixme: ⚠️️ rename webPath to urlStr ?
-    */
-   public static func str(urlStr: String, onComplete:@escaping DownloadComplete = defaultDownloadComplete) {
-      guard let url = URL(string: urlStr) else { onComplete(nil, .invalideWebPath); return }
-      str(url: url, downloadComplete: onComplete)
-   }
-   /**
-    * Return string for URL
-    * ## Examples:
-    * NetworkParser.str(url: url)
-    */
-   public static func str(url: URL, downloadComplete:@escaping DownloadComplete = defaultDownloadComplete) {
-      data(url: url) { data, response, error in
-         guard let data = data, error == nil else { downloadComplete(nil, .errorGettingDataFromURL(error, response)); return }
-         //Swift.print(response?.suggestedFilename ?? url.lastPathComponent)
-         guard let stringValue = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as String? else { downloadComplete(nil, .dataIsNotString); return }
-         downloadComplete(stringValue, nil)
-      }
-   }
    /**
     * ## Examples: NetworkParser.data(webPath: webPath)
     */
@@ -64,50 +43,5 @@ public class NetworkParser {
          completion(data, response, error)
       }
       task.resume()
-   }
-}
-
-/**
- * Extra
- */
-extension NetworkParser {
-   public enum HTTPMethodType: String { case get = "GET"; case post = "POST" }
-   public enum DownloadError: Error {
-      case invalideWebPath
-      case dataIsNotString
-      case errorGettingDataFromURL(Error?, URLResponse?)
-   }
-   public typealias DownloadComplete = (String?, DownloadError?) -> Void
-   public typealias DataDownloadComplete = (Data?, DownloadError?) -> Void
-   public typealias URLQuery = (Data?, URLResponse?, Error?) -> Void
-   /**
-    * New
-    */
-   public static var defaultDownloadComplete: DownloadComplete = { (string: String?, error: DownloadError?) in
-      if let str = string {
-         Swift.print("str:  \(str)")
-      } else {
-         Swift.print("error:  \(String(describing: error))")
-      }
-   }
-   /**
-    * Default callback method for data(url: URL)
-    */
-   public static var defaultURLQueryComplete: URLQuery = { (data: Data?, response: URLResponse?, error: Error?) in
-      if let data = data, let str = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as String? {
-         Swift.print("str:  \(str)")
-      } else {
-         Swift.print("error:  \(String(describing: error)) response: \(String(describing: response))")
-      }
-   }
-   /**
-    * Default callback method for data(webPath:String) call
-    */
-   public static var defaultDataComplete: DataDownloadComplete = { (data: Data?, error: DownloadError?) in
-      if let data = data, let str = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as String? {
-         Swift.print("str:  \(str)")
-      } else {
-         Swift.print("error:  \(String(describing: error))")
-      }
    }
 }
