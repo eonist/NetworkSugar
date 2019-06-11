@@ -1,5 +1,4 @@
 import Foundation
-
 /**
  * String
  */
@@ -9,8 +8,8 @@ extension NetworkParser {
     * - Remark: should be added to a bg thread
     * - Remark: For multiple varaiables etc: param1=value1&param2=value2
     * ## Examples:
-    * NetworkParser.str(webPath: webPath) //(See defaultDownloadComplete)
-    * urlStr:"https://www.google.com/dev/push?=someValue"
+    * NetworkParser.str(webPath: webPath) // (See defaultDownloadComplete)
+    * urlStr: "https://www.google.com/dev/push?=someValue"
     */
    public static func str(urlStr: String, httpMethod: HTTPMethodType = .get, onComplete:@escaping DownloadComplete = defaultDownloadComplete) {
       guard let url = URL(string: urlStr) else { onComplete(nil, .invalideWebPath); return }
