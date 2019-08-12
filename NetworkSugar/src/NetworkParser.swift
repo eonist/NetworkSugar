@@ -8,7 +8,8 @@ import UIKit.UIView
  */
 public class NetworkParser {
    /**
-    * ## Examples: NetworkParser.data(webPath: webPath)
+    * ## Examples:
+    * NetworkParser.data(webPath: webPath)
     */
    public static func data(urlStr: String, onComplete:@escaping DataDownloadComplete = defaultDataComplete) {
       guard let url = URL(string: urlStr) else { onComplete(nil, .invalideWebPath); return }
@@ -20,11 +21,12 @@ public class NetworkParser {
    }
    /**
     * Get Data from URL
-    * EXAMPLE: NetworkParser.data(url:url)
-    * NOTE: this onliner also works: URLSession.shared.dataTask(with: url) { data, response, error in completion(data, response, error) }.resume()
-    * For multiple varaiables etc: param1=value1&param2=value2
-    * EXAMPLE: urlStr:"https://www.google.com/dev/push?tx=someValue"
-    * PARAM: httpBody: some servers requires the params to be encoded as data
+    * ## Examples:
+    * NetworkParser.data(url: url)
+    * - Note: this onliner also works: URLSession.shared.dataTask(with: url) { data, response, error in completion(data, response, error) }.resume()
+    * - Note: For multiple varaiables etc: param1=value1&param2=value2
+    * - Note: urlStr:"https://www.google.com/dev/push?tx=someValue"
+    * - Parameter httpBody: some servers requires the params to be encoded as data
     */
    public static func data(url: URL, httpMethod: HTTPMethodType = .get, httpBody: Data? = nil, completion: @escaping URLQuery = defaultURLQueryComplete) {
       var urlRequest: URLRequest = .init(url: url)
@@ -35,7 +37,7 @@ public class NetworkParser {
       data(urlRequest: urlRequest)
    }
    /**
-    * New (Used for Custom URLRequests)
+    * - Note: Used for Custom URLRequests
     */
    public static func data(urlRequest: URLRequest, completion: @escaping URLQuery = defaultURLQueryComplete) {
       let session: URLSession = .shared

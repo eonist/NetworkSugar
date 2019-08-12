@@ -4,7 +4,7 @@ import Foundation
  */
 extension NetworkParser {
    /**
-    * New
+    * Default completetion block for download
     */
    public static var defaultDownloadComplete: DownloadComplete = { (string: String?, error: DownloadError?) in
       if let str = string {
