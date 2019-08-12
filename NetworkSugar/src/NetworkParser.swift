@@ -34,7 +34,7 @@ public class NetworkParser {
       if let httpBody = httpBody {
          urlRequest.httpBody = httpBody
       }
-      data(urlRequest: urlRequest)
+      data(urlRequest: urlRequest, completion: completion)
    }
    /**
     * - Note: Used for Custom URLRequests

@@ -13,7 +13,7 @@ extension NetworkParser {
     */
    public static func str(urlStr: String, httpMethod: HTTPMethodType = .get, onComplete:@escaping DownloadComplete = defaultDownloadComplete) {
       guard let url = URL(string: urlStr) else { onComplete(nil, .invalideWebPath); return }
-      str(url: url, downloadComplete: onComplete)
+      str(url: url, httpMethod: httpMethod, downloadComplete: onComplete)
    }
    /**
     * Return string for URL
