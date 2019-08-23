@@ -10,6 +10,7 @@ public class NetworkParser {
    /**
     * ## Examples:
     * NetworkParser.data(webPath: webPath)
+    * - Remark: Calls are not in any threads. Wrap in background from the caller POV
     */
    public static func data(urlStr: String, onComplete:@escaping DataDownloadComplete = defaultDataComplete) {
       guard let url = URL(string: urlStr) else { onComplete(nil, .invalideWebPath); return }
@@ -27,6 +28,7 @@ public class NetworkParser {
     * - Note: For multiple varaiables etc: param1=value1&param2=value2
     * - Note: urlStr:"https://www.google.com/dev/push?tx=someValue"
     * - Parameter httpBody: some servers requires the params to be encoded as data
+    * - Remark: Calls are not in any threads. Wrap in background from the caller POV
     */
    public static func data(url: URL, httpMethod: HTTPMethodType = .get, httpBody: Data? = nil, completion: @escaping URLQuery = defaultURLQueryComplete) {
       var urlRequest: URLRequest = .init(url: url)
@@ -38,6 +40,7 @@ public class NetworkParser {
    }
    /**
     * - Note: Used for Custom URLRequests
+    * - Remark: Calls are not in any threads. Wrap in background from the caller POV
     */
    public static func data(urlRequest: URLRequest, completion: @escaping URLQuery = defaultURLQueryComplete) {
       let session: URLSession = .shared

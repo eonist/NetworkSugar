@@ -7,6 +7,7 @@ extension NetworkParser {
     * Return string for WebPath
     * - Remark: should be added to a bg thread
     * - Remark: For multiple varaiables etc: param1=value1&param2=value2
+    * - Remark: Calls are not in any threads. Wrap in background from the caller POV
     * ## Examples:
     * NetworkParser.str(webPath: webPath) // (See defaultDownloadComplete)
     * urlStr: "https://www.google.com/dev/push?=someValue"
@@ -19,6 +20,7 @@ extension NetworkParser {
     * Return string for URL
     * ## Examples:
     * NetworkParser.str(url: url)
+    * - Remark: Calls are not in any threads. Wrap in background from the caller POV
     */
    public static func str(url: URL, httpMethod: HTTPMethodType = .get, downloadComplete:@escaping DownloadComplete = defaultDownloadComplete) {
       data(url: url, httpMethod: httpMethod) { data, response, error in
