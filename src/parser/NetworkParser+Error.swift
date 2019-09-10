@@ -1,12 +1,13 @@
 import Foundation
 /**
- * Extra
+ * Error (New with support for ResultType)
  */
 extension NetworkParser {
-   public enum HTTPMethodType: String { case get = "GET"; case post = "POST" }
-   public enum DownloadError: Error {
-      case invalideWebPath
+   public enum NetworkError: Error {
+      case invalidWebPath
       case dataIsNotString
-      case errorGettingDataFromURL(Error?, URLResponse?)
+      case dataIsNil
+      case responseIsNil
+      case errorGettingDataFromURL(Error, URLResponse)
    }
 }

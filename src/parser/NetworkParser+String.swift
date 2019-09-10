@@ -1,6 +1,7 @@
 import Foundation
+
 /**
- * String
+ * String (New with support for Result type)
  */
 extension NetworkParser {
    /**
@@ -11,17 +12,21 @@ extension NetworkParser {
     * ## Examples:
     * let webPath: String = "https://github.com/stylekit/img/blob/master/playlist.json?raw=true"
     * NetworkParser.str(webPath: webPath) { (string: String?, error: DownloadError?) in
-    *    if let str = string {
+    *    if case .success(let str) = result {
     *       Swift.print("str:  \(str)")
-    *    } else {
+    *    } else if case .failure(let error) = result {
     *       Swift.print("error:  \(String(describing: error))")
     *    }
     * }
     * - Parameter urlStr: (Webpath) i.e: "https://www.google.com/dev/push?=someValue"
     */
-   public static func str(urlStr: String, httpMethod: HTTPMethodType = .get, onComplete:@escaping DownloadComplete = defaultDownloadComplete) {
-      guard let url = URL(string: urlStr) else { onComplete(nil, .invalideWebPath); return }
-      str(url: url, httpMethod: httpMethod, downloadComplete: onComplete)
+   public static func str(urlStr: String, httpMethod: HTTPMethodType = .get, onComplete:@escaping OnStrDownloadComplete = defaultOnStrDownloadComplete) {
+      guard let url = URL(string: urlStr) else { onComplete(.failure(.invalidWebPath)); return }
+      str(url: url, httpMethod: httpMethod) { result in
+         if case .success(let stringAndResponse) = result {
+            onComplete(.success(stringAndResponse.string))
+         }
+      }
    }
    /**
     * Return string for URL
@@ -30,11 +35,12 @@ extension NetworkParser {
     * - Remark: Calls are not in any threads. Wrap in background from the caller POV
     * - Note: You can debug more closley with: response?.suggestedFilename and url.lastPathComponent
     */
-   public static func str(url: URL, httpMethod: HTTPMethodType = .get, downloadComplete:@escaping DownloadComplete = defaultDownloadComplete) {
-      data(url: url, httpMethod: httpMethod) { data, response, error in
-         guard let data = data, error == nil else { downloadComplete(nil, .errorGettingDataFromURL(error, response)); return }
-         guard let stringValue = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as String? else { downloadComplete(nil, .dataIsNotString); return }
-         downloadComplete(stringValue, nil)
+   public static func str(url: URL, httpMethod: HTTPMethodType = .get, onDownloadComplete:@escaping OnStringDownloadComplete = defaultOnStringDownloadComplete) {
+      data(url: url, httpMethod: httpMethod) { result in
+         if case .success(let dataAndResponse) = result {
+            guard let stringValue = NSString(data: dataAndResponse.data, encoding: String.Encoding.utf8.rawValue) as String? else { onDownloadComplete(.failure(.dataIsNotString)); return }
+            onDownloadComplete(.success((stringValue, dataAndResponse.response)))
+         }
       }
    }
 }
