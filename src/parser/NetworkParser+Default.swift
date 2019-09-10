@@ -1,6 +1,6 @@
 import Foundation
 /**
- * Default callbacks (New for Result type)
+ * Default callbacks - Data (New for Result type)
  */
 extension NetworkParser {
    /**
@@ -23,6 +23,11 @@ extension NetworkParser {
           Swift.print("error:  \(String(describing: error))") // print(error.localizedDescription)
       }
    }
+}
+/**
+ * Default callbacks - String (New for Result type)
+ */
+extension NetworkParser {
    /**
     * Default completion block for string download
     */
