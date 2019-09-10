@@ -8,15 +8,22 @@ import UIKit.UIView
  */
 public class NetworkParser {
    /**
+    * Get Data from urlStr (WebPath)
     * ## Examples:
-    * NetworkParser.data(webPath: webPath)
-    * - Remark: Calls are not in any threads. Wrap in background from the caller POV
+    * let webPath: String = "https://github.com/stylekit/img/blob/master/playlist.json?raw=true"
+    * NetworkParser.str(webPath: webPath) { (data: Data?, error: DownloadError?) in
+    *    if let data = data {
+    *       Swift.print("data.count:  \(data.count)")
+    *    } else {
+    *       Swift.print("error:  \(String(describing: error))")
+    *    }
+    * }
+    * - Remark: Calls are not in any threads. Wrap in background from the caller
     */
    public static func data(urlStr: String, onComplete:@escaping DataDownloadComplete = defaultDataComplete) {
       guard let url = URL(string: urlStr) else { onComplete(nil, .invalideWebPath); return }
       data(url: url) { data, response, error in
          guard let data = data, error == nil else { onComplete(nil, .errorGettingDataFromURL(error, response)); return }
-         //Swift.print(response?.suggestedFilename ?? url.lastPathComponent)
          onComplete(data, nil)
       }
    }
@@ -24,7 +31,7 @@ public class NetworkParser {
     * Get Data from URL
     * ## Examples:
     * NetworkParser.data(url: url)
-    * - Note: this onliner also works: URLSession.shared.dataTask(with: url) { data, response, error in completion(data, response, error) }.resume()
+    * - Note: this one-liner also works: URLSession.shared.dataTask(with: url) { data, response, error in completion(data, response, error) }.resume()
     * - Note: For multiple varaiables etc: param1=value1&param2=value2
     * - Note: urlStr:"https://www.google.com/dev/push?tx=someValue"
     * - Parameter httpBody: some servers requires the params to be encoded as data
@@ -32,7 +39,7 @@ public class NetworkParser {
     */
    public static func data(url: URL, httpMethod: HTTPMethodType = .get, httpBody: Data? = nil, completion: @escaping URLQuery = defaultURLQueryComplete) {
       var urlRequest: URLRequest = .init(url: url)
-      urlRequest.httpMethod = httpMethod.rawValue//get or post
+      urlRequest.httpMethod = httpMethod.rawValue // get or post
       if let httpBody = httpBody {
          urlRequest.httpBody = httpBody
       }
