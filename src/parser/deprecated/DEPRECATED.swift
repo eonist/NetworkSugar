@@ -82,7 +82,7 @@ extension LegacyNetworkParser {
     * - Parameter httpBody: some servers requires the params to be encoded as data
     * - Remark: Calls are not in any threads. Wrap in background from the caller POV
     */
-   public static func data(url: URL, httpMethod: HTTPMethodType = .get, httpBody: Data? = nil, completion: @escaping URLQuery = defaultURLQueryComplete) {
+   public static func data(url: URL, httpMethod: NetworkParser.HTTPMethodType = .get, httpBody: Data? = nil, completion: @escaping URLQuery = defaultURLQueryComplete) {
       var urlRequest: URLRequest = .init(url: url)
       urlRequest.httpMethod = httpMethod.rawValue // get or post
       if let httpBody = httpBody { urlRequest.httpBody = httpBody }
@@ -120,7 +120,7 @@ extension LegacyNetworkParser {
     * }
     * - Parameter urlStr: (Webpath) i.e: "https://www.google.com/dev/push?=someValue"
     */
-   public static func str(urlStr: String, httpMethod: HTTPMethodType = .get, onComplete:@escaping DownloadComplete = defaultDownloadComplete) {
+   public static func str(urlStr: String, httpMethod: NetworkParser.HTTPMethodType = .get, onComplete:@escaping DownloadComplete = defaultDownloadComplete) {
       guard let url = URL(string: urlStr) else { onComplete(nil, .invalidWebPath); return }
       str(url: url, httpMethod: httpMethod, downloadComplete: onComplete)
    }
@@ -131,7 +131,7 @@ extension LegacyNetworkParser {
     * - Remark: Calls are not in any threads. Wrap in background from the caller POV
     * - Note: You can debug more closley with: response?.suggestedFilename and url.lastPathComponent
     */
-   public static func str(url: URL, httpMethod: HTTPMethodType = .get, downloadComplete:@escaping DownloadComplete = defaultDownloadComplete) {
+   public static func str(url: URL, httpMethod: NetworkParser.HTTPMethodType = .get, downloadComplete:@escaping DownloadComplete = defaultDownloadComplete) {
       data(url: url, httpMethod: httpMethod) { data, response, error in
          guard let data = data, error == nil else { downloadComplete(nil, .errorGettingDataFromURL(error, response)); return }
          guard let stringValue = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as String? else { downloadComplete(nil, .dataIsNotString); return }
