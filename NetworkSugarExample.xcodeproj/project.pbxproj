@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		9D10A2492327C24300513EF4 /* NetworkParser+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A2432327C24300513EF4 /* NetworkParser+Type.swift */; };
 		9D10A24A2327C24300513EF4 /* NetworkParser+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A2432327C24300513EF4 /* NetworkParser+Type.swift */; };
-		9D10A24B2327C24300513EF4 /* NetworkParser+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A2442327C24300513EF4 /* NetworkParser+Default.swift */; };
-		9D10A24C2327C24300513EF4 /* NetworkParser+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A2442327C24300513EF4 /* NetworkParser+Default.swift */; };
+		9D10A24B2327C24300513EF4 /* NetworkParser+Default+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A2442327C24300513EF4 /* NetworkParser+Default+String.swift */; };
+		9D10A24C2327C24300513EF4 /* NetworkParser+Default+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A2442327C24300513EF4 /* NetworkParser+Default+String.swift */; };
 		9D10A24D2327C24300513EF4 /* NetworkParser+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A2452327C24300513EF4 /* NetworkParser+Data.swift */; };
 		9D10A24E2327C24300513EF4 /* NetworkParser+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A2452327C24300513EF4 /* NetworkParser+Data.swift */; };
 		9D10A24F2327C24300513EF4 /* NetworkParser+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A2462327C24300513EF4 /* NetworkParser+String.swift */; };
@@ -21,6 +21,8 @@
 		9D10A2542327C24300513EF4 /* NetworkAsserter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A2482327C24300513EF4 /* NetworkAsserter.swift */; };
 		9D10A2582328095000513EF4 /* DEPRECATED.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A2572328095000513EF4 /* DEPRECATED.swift */; };
 		9D10A2592328095000513EF4 /* DEPRECATED.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A2572328095000513EF4 /* DEPRECATED.swift */; };
+		9D10A25D232929E100513EF4 /* NetworkParser+Default+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A25C232929E100513EF4 /* NetworkParser+Default+Data.swift */; };
+		9D10A25E232929E100513EF4 /* NetworkParser+Default+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A25C232929E100513EF4 /* NetworkParser+Default+Data.swift */; };
 		F1BED68821B4F73100A0D3D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED68721B4F73100A0D3D4 /* AppDelegate.swift */; };
 		F1BED68A21B4F73100A0D3D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED68921B4F73100A0D3D4 /* ViewController.swift */; };
 		F1BED68D21B4F73100A0D3D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BED68B21B4F73100A0D3D4 /* Main.storyboard */; };
@@ -58,12 +60,13 @@
 
 /* Begin PBXFileReference section */
 		9D10A2432327C24300513EF4 /* NetworkParser+Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkParser+Type.swift"; sourceTree = "<group>"; };
-		9D10A2442327C24300513EF4 /* NetworkParser+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkParser+Default.swift"; sourceTree = "<group>"; };
+		9D10A2442327C24300513EF4 /* NetworkParser+Default+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkParser+Default+String.swift"; sourceTree = "<group>"; };
 		9D10A2452327C24300513EF4 /* NetworkParser+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkParser+Data.swift"; sourceTree = "<group>"; };
 		9D10A2462327C24300513EF4 /* NetworkParser+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkParser+String.swift"; sourceTree = "<group>"; };
 		9D10A2472327C24300513EF4 /* NetworkParser+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkParser+Error.swift"; sourceTree = "<group>"; };
 		9D10A2482327C24300513EF4 /* NetworkAsserter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAsserter.swift; sourceTree = "<group>"; };
 		9D10A2572328095000513EF4 /* DEPRECATED.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEPRECATED.swift; sourceTree = "<group>"; };
+		9D10A25C232929E100513EF4 /* NetworkParser+Default+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkParser+Default+Data.swift"; sourceTree = "<group>"; };
 		F1BED68421B4F73100A0D3D4 /* NetworkSugarExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkSugarExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1BED68721B4F73100A0D3D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1BED68921B4F73100A0D3D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,11 +121,12 @@
 			isa = PBXGroup;
 			children = (
 				9D10A2432327C24300513EF4 /* NetworkParser+Type.swift */,
-				9D10A2442327C24300513EF4 /* NetworkParser+Default.swift */,
+				9D10A2442327C24300513EF4 /* NetworkParser+Default+String.swift */,
+				9D10A25C232929E100513EF4 /* NetworkParser+Default+Data.swift */,
 				9D10A2452327C24300513EF4 /* NetworkParser+Data.swift */,
 				9D10A2462327C24300513EF4 /* NetworkParser+String.swift */,
 				9D10A2472327C24300513EF4 /* NetworkParser+Error.swift */,
-				9D10A2572328095000513EF4 /* DEPRECATED.swift */,
+				9D10A25F23292A3700513EF4 /* deprecated */,
 			);
 			path = parser;
 			sourceTree = "<group>";
@@ -133,6 +137,14 @@
 				9D10A2482327C24300513EF4 /* NetworkAsserter.swift */,
 			);
 			path = asserter;
+			sourceTree = "<group>";
+		};
+		9D10A25F23292A3700513EF4 /* deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				9D10A2572328095000513EF4 /* DEPRECATED.swift */,
+			);
+			path = deprecated;
 			sourceTree = "<group>";
 		};
 		F1BED67B21B4F73100A0D3D4 = {
@@ -408,8 +420,9 @@
 				9D10A2492327C24300513EF4 /* NetworkParser+Type.swift in Sources */,
 				9D10A24D2327C24300513EF4 /* NetworkParser+Data.swift in Sources */,
 				9D10A24F2327C24300513EF4 /* NetworkParser+String.swift in Sources */,
-				9D10A24B2327C24300513EF4 /* NetworkParser+Default.swift in Sources */,
+				9D10A24B2327C24300513EF4 /* NetworkParser+Default+String.swift in Sources */,
 				9D10A2512327C24300513EF4 /* NetworkParser+Error.swift in Sources */,
+				9D10A25D232929E100513EF4 /* NetworkParser+Default+Data.swift in Sources */,
 				9D10A2532327C24300513EF4 /* NetworkAsserter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,8 +435,9 @@
 				9D10A24A2327C24300513EF4 /* NetworkParser+Type.swift in Sources */,
 				9D10A24E2327C24300513EF4 /* NetworkParser+Data.swift in Sources */,
 				9D10A2502327C24300513EF4 /* NetworkParser+String.swift in Sources */,
-				9D10A24C2327C24300513EF4 /* NetworkParser+Default.swift in Sources */,
+				9D10A24C2327C24300513EF4 /* NetworkParser+Default+String.swift in Sources */,
 				9D10A2522327C24300513EF4 /* NetworkParser+Error.swift in Sources */,
+				9D10A25E232929E100513EF4 /* NetworkParser+Default+Data.swift in Sources */,
 				9D10A2542327C24300513EF4 /* NetworkAsserter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

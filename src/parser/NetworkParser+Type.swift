@@ -1,15 +1,23 @@
 import Foundation
 /**
- * New - Using Result type
+ * Completion-call-backs
  */
 extension NetworkParser {
-   // Data tuples
-   public typealias StringAndResponse = (string: String, response: URLResponse)
-   public typealias DataAndResponse = (data: Data, response: URLResponse)
-   // Completion callback
+   //  callback
    public typealias OnStrDownloadComplete = (Result<String, NetworkError>) -> Void
    public typealias OnDataDownloadCompleted = (Result<Data, NetworkError>) -> Void
-   // Completion callback (With response)
+}
+/**
+ * Completion-call-backs (With response)
+ */
+extension NetworkParser {
    public typealias OnStringDownloadComplete = (Result<StringAndResponse, NetworkError>) -> Void
    public typealias OnDataDownloadComplete = (Result<DataAndResponse, NetworkError>) -> Void
+}
+/**
+ * Callback-Data-type
+ */
+extension NetworkParser {
+   public typealias StringAndResponse = (string: String, response: URLResponse)
+   public typealias DataAndResponse = (data: Data, response: URLResponse)
 }
