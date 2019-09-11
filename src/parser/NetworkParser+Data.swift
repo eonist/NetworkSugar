@@ -9,6 +9,7 @@ import UIKit.UIView
 public class NetworkParser {
    /**
     * Get Data from urlStr (WebPath)
+    * - Note: Calls are not in any threads. Wrap in background from the caller
     * ## Examples:
     * let webPath: String = "https://github.com/stylekit/img/blob/master/playlist.json?raw=true"
     * NetworkParser.str(webPath: webPath) { (data: Data?, error: DownloadError?) in
@@ -18,7 +19,6 @@ public class NetworkParser {
     *       Swift.print("error:  \(String(describing: error))")
     *    }
     * }
-    * - Remark: Calls are not in any threads. Wrap in background from the caller
     */
    public static func data(urlStr: String, httpMethod: HTTPMethodType = .get, onComplete:@escaping OnDataDownloadCompleted = defaultOnDataCompleted) {
       guard let url = URL(string: urlStr) else { onComplete(.failure(.invalidWebPath)); return }
@@ -34,9 +34,9 @@ public class NetworkParser {
     * NetworkParser.data(url: url)
     * - Note: this one-liner also works: URLSession.shared.dataTask(with: url) { data, response, error in completion(data, response, error) }.resume()
     * - Note: For multiple varaiables etc: param1=value1&param2=value2
+    * - Note: Calls are not in any threads. Wrap in background from the caller POV
     * - Parameter urlStr: "https://www.google.com/dev/push?tx=someValue"
     * - Parameter httpBody: some servers requires the params to be encoded as data
-    * - Remark: Calls are not in any threads. Wrap in background from the caller POV
     */
    public static func data(url: URL, httpMethod: HTTPMethodType = .get, httpBody: Data? = nil, completion: @escaping OnDataDownloadComplete = defaultOnDataComplete) {
       var urlRequest: URLRequest = .init(url: url)
@@ -47,7 +47,7 @@ public class NetworkParser {
    /**
     * Get data
     * - Note: Used for Custom URLRequests
-    * - Remark: Calls are not made in background thread. Wrap in background thread from the caller
+    * - Note: Calls are not made in background thread. Wrap in background thread from the caller
     */
    public static func data(urlRequest: URLRequest, onComplete: @escaping OnDataDownloadComplete) {
       let session: URLSession = .shared

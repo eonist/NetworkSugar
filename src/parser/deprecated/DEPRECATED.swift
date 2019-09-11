@@ -4,10 +4,11 @@ import AppKit.NSView
 #else
 import UIKit.UIView
 #endif
+public class LegacyNetworkParser {}
 /**
  * Type
  */
-extension NetworkParser {
+extension LegacyNetworkParser {
    public typealias DownloadComplete = (String?, DownloadError?) -> Void
    public typealias DataDownloadComplete = (Data?, DownloadError?) -> Void
    public typealias URLQuery = (Data?, URLResponse?, Error?) -> Void
@@ -15,7 +16,7 @@ extension NetworkParser {
 /**
  * Default callbacks
  */
-extension NetworkParser {
+extension LegacyNetworkParser {
    /**
     * Default completetion block for download
     */
@@ -50,7 +51,7 @@ extension NetworkParser {
 /**
  * Data
  */
-extension NetworkParser {
+extension LegacyNetworkParser {
    /**
     * Get Data from urlStr (WebPath)
     * ## Examples:
@@ -102,7 +103,7 @@ extension NetworkParser {
 /**
  * String
  */
-extension NetworkParser {
+extension LegacyNetworkParser {
    /**
     * Return string for WebPath
     * - Remark: should be added to a bg thread
@@ -141,8 +142,7 @@ extension NetworkParser {
 /**
  * Extra
  */
-extension NetworkParser {
-   public enum HTTPMethodType: String { case get = "GET"; case post = "POST" }
+extension LegacyNetworkParser {
    public enum DownloadError: Error {
       case invalidWebPath
       case dataIsNotString
