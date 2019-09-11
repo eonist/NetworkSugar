@@ -14,6 +14,5 @@ NetworkParser.str(urlStr: urlStr) { result in
   }
 }
 // Shorthand:
-let str = NetworkParser.str(urlStr: urlStr).get() // you can use .map() instead of get as well
-print(str) // the json payload
+NetworkParser.str(urlStr: webPath) { print(try? $0.get()) } // the json payload
 ```
