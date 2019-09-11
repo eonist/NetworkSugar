@@ -4,10 +4,11 @@ import AppKit.NSView
 #else
 import UIKit.UIView
 #endif
+public class LegacyNetworkParser {}
 /**
  * Type
  */
-extension NetworkParser {
+extension LegacyNetworkParser {
    public typealias DownloadComplete = (String?, DownloadError?) -> Void
    public typealias DataDownloadComplete = (Data?, DownloadError?) -> Void
    public typealias URLQuery = (Data?, URLResponse?, Error?) -> Void
@@ -15,7 +16,7 @@ extension NetworkParser {
 /**
  * Default callbacks
  */
-extension NetworkParser {
+extension LegacyNetworkParser {
    /**
     * Default completetion block for download
     */
@@ -50,7 +51,7 @@ extension NetworkParser {
 /**
  * Data
  */
-extension NetworkParser {
+extension LegacyNetworkParser {
    /**
     * Get Data from urlStr (WebPath)
     * ## Examples:
@@ -81,7 +82,7 @@ extension NetworkParser {
     * - Parameter httpBody: some servers requires the params to be encoded as data
     * - Remark: Calls are not in any threads. Wrap in background from the caller POV
     */
-   public static func data(url: URL, httpMethod: HTTPMethodType = .get, httpBody: Data? = nil, completion: @escaping URLQuery = defaultURLQueryComplete) {
+   public static func data(url: URL, httpMethod: NetworkParser.HTTPMethodType = .get, httpBody: Data? = nil, completion: @escaping URLQuery = defaultURLQueryComplete) {
       var urlRequest: URLRequest = .init(url: url)
       urlRequest.httpMethod = httpMethod.rawValue // get or post
       if let httpBody = httpBody { urlRequest.httpBody = httpBody }
@@ -102,7 +103,7 @@ extension NetworkParser {
 /**
  * String
  */
-extension NetworkParser {
+extension LegacyNetworkParser {
    /**
     * Return string for WebPath
     * - Remark: should be added to a bg thread
@@ -119,7 +120,7 @@ extension NetworkParser {
     * }
     * - Parameter urlStr: (Webpath) i.e: "https://www.google.com/dev/push?=someValue"
     */
-   public static func str(urlStr: String, httpMethod: HTTPMethodType = .get, onComplete:@escaping DownloadComplete = defaultDownloadComplete) {
+   public static func str(urlStr: String, httpMethod: NetworkParser.HTTPMethodType = .get, onComplete:@escaping DownloadComplete = defaultDownloadComplete) {
       guard let url = URL(string: urlStr) else { onComplete(nil, .invalidWebPath); return }
       str(url: url, httpMethod: httpMethod, downloadComplete: onComplete)
    }
@@ -130,7 +131,7 @@ extension NetworkParser {
     * - Remark: Calls are not in any threads. Wrap in background from the caller POV
     * - Note: You can debug more closley with: response?.suggestedFilename and url.lastPathComponent
     */
-   public static func str(url: URL, httpMethod: HTTPMethodType = .get, downloadComplete:@escaping DownloadComplete = defaultDownloadComplete) {
+   public static func str(url: URL, httpMethod: NetworkParser.HTTPMethodType = .get, downloadComplete:@escaping DownloadComplete = defaultDownloadComplete) {
       data(url: url, httpMethod: httpMethod) { data, response, error in
          guard let data = data, error == nil else { downloadComplete(nil, .errorGettingDataFromURL(error, response)); return }
          guard let stringValue = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as String? else { downloadComplete(nil, .dataIsNotString); return }
@@ -141,8 +142,7 @@ extension NetworkParser {
 /**
  * Extra
  */
-extension NetworkParser {
-   public enum HTTPMethodType: String { case get = "GET"; case post = "POST" }
+extension LegacyNetworkParser {
    public enum DownloadError: Error {
       case invalidWebPath
       case dataIsNotString

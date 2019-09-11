@@ -21,3 +21,9 @@ extension NetworkParser {
    public typealias StringAndResponse = (string: String, response: URLResponse)
    public typealias DataAndResponse = (data: Data, response: URLResponse)
 }
+/**
+ * Used for differentiating get from post
+ */
+extension NetworkParser {
+   public enum HTTPMethodType: String { case get = "GET"; case post = "POST" }
+}
