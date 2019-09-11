@@ -4,7 +4,7 @@ public class NetworkAsserter {
 	/**
 	 * Asserts if the device is connected to internet
 	 * - Note: works in IOS and OSX
-    * Fixme: ⚠️️ Needs more work, see stackoverflow https://stackoverflow.com/questions/30743408/check-for-internet-connection-with-swift
+    * - Fixme: ⚠️️ Needs more work, see stackoverflow https://stackoverflow.com/questions/30743408/check-for-internet-connection-with-swift
 	 */
 	public static func isConnectedToInternet() -> Bool {
 	   /*
