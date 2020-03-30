@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F14964CF24320CF2008C1847 /* NetworkParser+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A2452327C24300513EF4 /* NetworkParser+Data.swift */; };
-		F14964D024320CF2008C1847 /* NetworkParser+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A2432327C24300513EF4 /* NetworkParser+Type.swift */; };
-		F14964D124320CF2008C1847 /* NetworkParser+Default+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A2442327C24300513EF4 /* NetworkParser+Default+String.swift */; };
-		F14964D224320CF2008C1847 /* NetworkParser+Default+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A25C232929E100513EF4 /* NetworkParser+Default+Data.swift */; };
-		F14964D324320CF2008C1847 /* NetworkParser+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A2462327C24300513EF4 /* NetworkParser+String.swift */; };
-		F14964D424320CF2008C1847 /* NetworkParser+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10A2472327C24300513EF4 /* NetworkParser+Error.swift */; };
+		F14964E92432106B008C1847 /* NetworkAsserter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14964DF2432106B008C1847 /* NetworkAsserter.swift */; };
+		F14964EA2432106B008C1847 /* NetworkParser+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14964E12432106B008C1847 /* NetworkParser+Type.swift */; };
+		F14964EB2432106B008C1847 /* NetworkParser+Default+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14964E22432106B008C1847 /* NetworkParser+Default+Data.swift */; };
+		F14964EC2432106B008C1847 /* NetworkParser+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14964E32432106B008C1847 /* NetworkParser+Data.swift */; };
+		F14964ED2432106B008C1847 /* NetworkParser+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14964E42432106B008C1847 /* NetworkParser+String.swift */; };
+		F14964EE2432106B008C1847 /* NetworkParser+Default+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14964E52432106B008C1847 /* NetworkParser+Default+String.swift */; };
+		F14964EF2432106B008C1847 /* NetworkParser+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14964E62432106B008C1847 /* NetworkParser+Error.swift */; };
+		F14964F02432106B008C1847 /* DEPRECATED.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14964E82432106B008C1847 /* DEPRECATED.swift */; };
 		F1BED68821B4F73100A0D3D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED68721B4F73100A0D3D4 /* AppDelegate.swift */; };
 		F1BED68F21B4F73200A0D3D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1BED68E21B4F73200A0D3D4 /* Assets.xcassets */; };
 		F1BED69221B4F73200A0D3D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BED69021B4F73200A0D3D4 /* LaunchScreen.storyboard */; };
@@ -32,14 +34,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9D10A2432327C24300513EF4 /* NetworkParser+Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkParser+Type.swift"; sourceTree = "<group>"; };
-		9D10A2442327C24300513EF4 /* NetworkParser+Default+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkParser+Default+String.swift"; sourceTree = "<group>"; };
-		9D10A2452327C24300513EF4 /* NetworkParser+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkParser+Data.swift"; sourceTree = "<group>"; };
-		9D10A2462327C24300513EF4 /* NetworkParser+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkParser+String.swift"; sourceTree = "<group>"; };
-		9D10A2472327C24300513EF4 /* NetworkParser+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkParser+Error.swift"; sourceTree = "<group>"; };
-		9D10A2482327C24300513EF4 /* NetworkAsserter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAsserter.swift; sourceTree = "<group>"; };
-		9D10A2572328095000513EF4 /* DEPRECATED.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEPRECATED.swift; sourceTree = "<group>"; };
-		9D10A25C232929E100513EF4 /* NetworkParser+Default+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkParser+Default+Data.swift"; sourceTree = "<group>"; };
+		F14964DF2432106B008C1847 /* NetworkAsserter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAsserter.swift; sourceTree = "<group>"; };
+		F14964E12432106B008C1847 /* NetworkParser+Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkParser+Type.swift"; sourceTree = "<group>"; };
+		F14964E22432106B008C1847 /* NetworkParser+Default+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkParser+Default+Data.swift"; sourceTree = "<group>"; };
+		F14964E32432106B008C1847 /* NetworkParser+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkParser+Data.swift"; sourceTree = "<group>"; };
+		F14964E42432106B008C1847 /* NetworkParser+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkParser+String.swift"; sourceTree = "<group>"; };
+		F14964E52432106B008C1847 /* NetworkParser+Default+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkParser+Default+String.swift"; sourceTree = "<group>"; };
+		F14964E62432106B008C1847 /* NetworkParser+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkParser+Error.swift"; sourceTree = "<group>"; };
+		F14964E82432106B008C1847 /* DEPRECATED.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DEPRECATED.swift; sourceTree = "<group>"; };
 		F1BED68421B4F73100A0D3D4 /* NetworkSugarExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkSugarExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1BED68721B4F73100A0D3D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1BED68E21B4F73200A0D3D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,41 +64,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9D10A2422327C24300513EF4 /* src */ = {
+		F14964DC2432106B008C1847 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				9D10A2552327C25B00513EF4 /* parser */,
-				9D10A2562327C26100513EF4 /* asserter */,
+				F14964DD2432106B008C1847 /* NetworkSugar */,
 			);
-			path = src;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		9D10A2552327C25B00513EF4 /* parser */ = {
+		F14964DD2432106B008C1847 /* NetworkSugar */ = {
 			isa = PBXGroup;
 			children = (
-				9D10A2452327C24300513EF4 /* NetworkParser+Data.swift */,
-				9D10A2432327C24300513EF4 /* NetworkParser+Type.swift */,
-				9D10A2442327C24300513EF4 /* NetworkParser+Default+String.swift */,
-				9D10A25C232929E100513EF4 /* NetworkParser+Default+Data.swift */,
-				9D10A2462327C24300513EF4 /* NetworkParser+String.swift */,
-				9D10A2472327C24300513EF4 /* NetworkParser+Error.swift */,
-				9D10A25F23292A3700513EF4 /* deprecated */,
+				F14964DE2432106B008C1847 /* asserter */,
+				F14964E02432106B008C1847 /* parser */,
 			);
-			path = parser;
+			path = NetworkSugar;
 			sourceTree = "<group>";
 		};
-		9D10A2562327C26100513EF4 /* asserter */ = {
+		F14964DE2432106B008C1847 /* asserter */ = {
 			isa = PBXGroup;
 			children = (
-				9D10A2482327C24300513EF4 /* NetworkAsserter.swift */,
+				F14964DF2432106B008C1847 /* NetworkAsserter.swift */,
 			);
 			path = asserter;
 			sourceTree = "<group>";
 		};
-		9D10A25F23292A3700513EF4 /* deprecated */ = {
+		F14964E02432106B008C1847 /* parser */ = {
 			isa = PBXGroup;
 			children = (
-				9D10A2572328095000513EF4 /* DEPRECATED.swift */,
+				F14964E12432106B008C1847 /* NetworkParser+Type.swift */,
+				F14964E22432106B008C1847 /* NetworkParser+Default+Data.swift */,
+				F14964E32432106B008C1847 /* NetworkParser+Data.swift */,
+				F14964E42432106B008C1847 /* NetworkParser+String.swift */,
+				F14964E52432106B008C1847 /* NetworkParser+Default+String.swift */,
+				F14964E62432106B008C1847 /* NetworkParser+Error.swift */,
+				F14964E72432106B008C1847 /* deprecated */,
+			);
+			path = parser;
+			sourceTree = "<group>";
+		};
+		F14964E72432106B008C1847 /* deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				F14964E82432106B008C1847 /* DEPRECATED.swift */,
 			);
 			path = deprecated;
 			sourceTree = "<group>";
@@ -104,7 +114,7 @@
 		F1BED67B21B4F73100A0D3D4 = {
 			isa = PBXGroup;
 			children = (
-				9D10A2422327C24300513EF4 /* src */,
+				F14964DC2432106B008C1847 /* Sources */,
 				F1BED68621B4F73100A0D3D4 /* NetworkSugarExample */,
 				F1BED69F21B4F75800A0D3D4 /* NetworkSugar */,
 				F1C2171B228D64FD005B445B /* NetworkSugar_macOS */,
@@ -242,13 +252,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F14964D424320CF2008C1847 /* NetworkParser+Error.swift in Sources */,
-				F14964D324320CF2008C1847 /* NetworkParser+String.swift in Sources */,
-				F14964D024320CF2008C1847 /* NetworkParser+Type.swift in Sources */,
+				F14964EF2432106B008C1847 /* NetworkParser+Error.swift in Sources */,
+				F14964ED2432106B008C1847 /* NetworkParser+String.swift in Sources */,
+				F14964EA2432106B008C1847 /* NetworkParser+Type.swift in Sources */,
 				F1BED68821B4F73100A0D3D4 /* AppDelegate.swift in Sources */,
-				F14964D224320CF2008C1847 /* NetworkParser+Default+Data.swift in Sources */,
-				F14964D124320CF2008C1847 /* NetworkParser+Default+String.swift in Sources */,
-				F14964CF24320CF2008C1847 /* NetworkParser+Data.swift in Sources */,
+				F14964EC2432106B008C1847 /* NetworkParser+Data.swift in Sources */,
+				F14964EB2432106B008C1847 /* NetworkParser+Default+Data.swift in Sources */,
+				F14964E92432106B008C1847 /* NetworkAsserter.swift in Sources */,
+				F14964EE2432106B008C1847 /* NetworkParser+Default+String.swift in Sources */,
+				F14964F02432106B008C1847 /* DEPRECATED.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
