@@ -4,11 +4,14 @@
 # Network sugar
 Sugar that makes swift networking less cumbersome
 
-## Example:
+### Installation
+- SPM: `.package(url: "https://github.com/eonist/NetworkSugar.git", .branch("master"))`
+
+### Example:
 
 ```swift
 let urlStr: String = "https://github.com/stylekit/img/blob/master/playlist.json?raw=true"
-//Longhand:
+// Longhand:
 NetworkParser.str(urlStr: urlStr) { result in
   if case .success(let string) = result {
      Swift.print("str:  \(str)")
@@ -17,5 +20,5 @@ NetworkParser.str(urlStr: urlStr) { result in
   }
 }
 // Shorthand:
-NetworkParser.str(urlStr: webPath) { print(try? $0.get()) } // the JSON payload
+NetworkParser.str(urlStr: webPath) { print(try? $0.get()) } // The JSON payload
 ```

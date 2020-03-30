@@ -1,5 +1,4 @@
 import UIKit
-import NetworkSugar
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,7 +20,7 @@ class MainVC: UIViewController {
       view = MainView()
       view.backgroundColor = .orange
    }
-   override var prefersStatusBarHidden: Bool { return false }
+   override var prefersStatusBarHidden: Bool { false }
 }
 class MainView: UIView {
    override init(frame: CGRect) {
